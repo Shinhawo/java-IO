@@ -16,7 +16,7 @@ public class Client {
 					= new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.println("서버로 접속요청을 보냈음...");
-		Socket socket = new Socket("192.168.0.7", 3000);
+		Socket socket = new Socket("192.168.0.3", 3000);
 		
 		PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 		BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));

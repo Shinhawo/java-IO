@@ -11,7 +11,7 @@ public class Server {
 
 	public static void main(String[] args) throws IOException{
 		
-		ServerSocket serverSocket = new ServerSocket(3000);
+		ServerSocket serverSocket = new ServerSocket(3000); 
 		System.out.println("서버 프로그램이 시작되었음...");
 		
 		System.out.println("서버가 클라이언트의 접속을 기다리고 있음...");

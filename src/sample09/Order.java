@@ -91,16 +91,22 @@ public class Order {
 		Date date = DateUtils.toDate(values[1]);
 		String userId = values[2];
 		int productNo = Integer.parseInt(values[3]);
-		int orderPrice = Integer.parseInt(values[4]);
-		int quantity = Integer.parseInt(values[5]);
+		int quantity = Integer.parseInt(values[4]);
+		int orderPrice = Integer.parseInt(values[5]);
 		int depositPoint = Integer.parseInt(values[6]); 
 		
 		return
 			new Order(no, date, userId, productNo, orderPrice, quantity, depositPoint);
 	}
 	
-	public String generateText () {
-		return MessageFormat.format("{0},{1},{2},{3},{4},{5},{6}", 
-				      no, date, userId, productNo, orderPrice, quantity, depositPoint);
-	}
+	public String generateText() {
+	      return MessageFormat.format("{0},{1},{2},{3},{4},{5},{6}", 
+	            String.valueOf(no), 
+	            DateUtils.toText(date), 
+	            userId, 
+	            String.valueOf(productNo), 
+	            String.valueOf(quantity), 
+	            String.valueOf(orderPrice), 
+	            String.valueOf(depositPoint));
+	   }
 }

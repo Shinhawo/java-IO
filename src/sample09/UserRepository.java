@@ -3,10 +3,9 @@ package sample09;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.management.RuntimeErrorException;
 
 // 사용자 정보
 public class UserRepository {
@@ -54,4 +53,26 @@ public class UserRepository {
 		}
 		return null;
 	}
+	
+	public void save() {
+		try {
+			String path = "src/sample09/users.txt";
+			PrintWriter out = new PrintWriter(path);
+			
+			for(User user : users) {
+				/*
+				 * user.generateText()는 User 객체의 사용자 정보를
+				 * "hong,zxcv1234,홍길동,1000"과 같은 문자열로 변환해서 반환한다.
+				 */
+				String text = user.generateText();
+				out.println(text);
+			}
+			out.close();
+			
+		}catch (IOException ex) {
+			throw new RuntimeException("users.txt 파일 쓰기 오류", ex);
+		}
+	}
+	
+	
 }

@@ -67,8 +67,10 @@ public class User {
 	
 	// User안에 들어있는 값을 가지고 만드는 메서드니까 멤버 메서드닷!
 	public String generateText() {
-		
-		return MessageFormat.format("{0},{1},{2},{3}", 
-										id, password, name, point);
-	}
+	      return MessageFormat.format("{0},{1},{2},{3}", 
+	            id, 
+	            password, 
+	            name, 
+	            String.valueOf(point));
+	   }
 }

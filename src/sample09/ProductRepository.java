@@ -3,6 +3,7 @@ package sample09;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,6 +59,21 @@ public class ProductRepository {
 		return null; // 같은 번호 없을 때의 경우 
 	}
 	
+	public void save() {
+		try {
+			String path = "src/sample09/products.txt";
+			PrintWriter out = new PrintWriter(path);
+			
+			for(Product product : products) {
+				String text = product.generateText();
+				out.println(text);
+			}
+			out.close();
+			
+		}catch (IOException ex) {
+			throw new RuntimeException("products.txt 파일 쓰기 오류", ex);
+		}
+	}
 	
 }
 

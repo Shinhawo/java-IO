@@ -73,11 +73,14 @@ public class Product {
 		return new Product(no,name,maker,price,stock);
 	}	
 	
-	public String generateText(){
-		
-		return MessageFormat.format("{0},{1},{2},{3},{4}",
-				                            no, name, maker, price, stock);
-	}
+	public String generateText() {
+	      return MessageFormat.format("{0},{1},{2},{3},{4}", 
+	            String.valueOf(no), 
+	            name, 
+	            maker, 
+	            String.valueOf(price), 
+	            String.valueOf(stock));
+	   }
 	
 	
 }

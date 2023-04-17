@@ -182,7 +182,7 @@ public class MallApplication {
 	
 	private void 프로그램종료() {
 		System.out.println("<< 프로그램 종료 >>");
-//		service.save();
+		service.save();
 		System.exit(0);
 	}
 	
